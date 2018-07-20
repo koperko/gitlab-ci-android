@@ -34,13 +34,7 @@ ADD sshd.conf /etc/supervisor/conf.d/sshd.conf
 RUN mkdir /root/.ssh
 RUN chmod o-rwx /root/.ssh
 
-####### 
-
-RUN apt-get --quiet update --yes && \
- apt-get --quiet install --yes wget tar unzip libc6-dev g++ dpkg-dev lib32gcc1 libc6-i386 lib32stdc++6 lib32z1 build-essential file usbutils openssh-client && \
- apt-get autoremove --yes && \
- apt-get clean && \
- rm -rf /var/lib/apt/lists/*
+#######
 
 RUN apt-get -qq update && \
     apt-get install -qqy --no-install-recommends \
