@@ -8,6 +8,12 @@ ENV ANDROID_HOME "/sdk"
 ENV PATH "$PATH:${ANDROID_HOME}/tools"
 ENV DEBIAN_FRONTEND noninteractive
 
+RUN apt-get --quiet update --yes && \
+ apt-get --quiet install --yes wget tar unzip lib32stdc++6 lib32z1 build-essential file usbutils openssh-client && \
+ apt-get autoremove --yes && \
+ apt-get clean && \
+ rm -rf /var/lib/apt/lists/*
+
 RUN apt-get -qq update && \
     apt-get install -qqy --no-install-recommends \
       curl \
