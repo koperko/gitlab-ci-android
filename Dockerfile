@@ -66,3 +66,5 @@ RUN echo y | /sdk/tools/bin/sdkmanager "extras;google;google_play_services"
 
 # Open port 22 so linked containers can see it
 EXPOSE 22
+
+CMD service ssh start
