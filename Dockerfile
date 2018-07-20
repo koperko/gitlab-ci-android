@@ -4,7 +4,7 @@ MAINTAINER koperko
 ENV VERSION_BUILD_TOOLS "26.0.0"
 ENV VERSION_TARGET_SDK "26"
 
-ENV ANDROID_HOME "/sdk"
+RUN echo "export ANDROID_HOME=/sdk" >> /etc/profile
 ENV PATH "$PATH:${ANDROID_HOME}/tools"
 ENV DEBIAN_FRONTEND noninteractive
 
