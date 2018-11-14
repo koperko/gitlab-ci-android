@@ -1,8 +1,8 @@
 FROM ubuntu:16.04
 MAINTAINER koperko
 
-ENV VERSION_BUILD_TOOLS "26.0.0"
-ENV VERSION_TARGET_SDK "26"
+ENV VERSION_BUILD_TOOLS "28.0.3"
+ENV VERSION_TARGET_SDK "28"
 
 ENV ANDROID_HOME "/sdk"
 RUN echo "export ANDROID_HOME=/sdk" >> /etc/profile
@@ -58,9 +58,9 @@ ADD https://dl.google.com/android/repository/sdk-tools-linux-3859397.zip /tools.
 RUN unzip /tools.zip -d /sdk && \
     rm -v /tools.zip
 
-RUN echo y | /sdk/tools/bin/sdkmanager "platforms;android-26"
+RUN echo y | /sdk/tools/bin/sdkmanager "platforms;android-28"
 RUN echo y | /sdk/tools/bin/sdkmanager "platform-tools"
-RUN echo y | /sdk/tools/bin/sdkmanager "build-tools;26.0.0"
+RUN echo y | /sdk/tools/bin/sdkmanager "build-tools;28.0.3"
 RUN echo y | /sdk/tools/bin/sdkmanager "extras;android;m2repository"
 RUN echo y | /sdk/tools/bin/sdkmanager "extras;google;m2repository"
 RUN echo y | /sdk/tools/bin/sdkmanager "extras;google;google_play_services"
