@@ -68,4 +68,6 @@ RUN echo y | /sdk/tools/bin/sdkmanager "extras;google;google_play_services"
 # Open port 22 so linked containers can see it
 EXPOSE 22
 
+ADD android-sdk-license /sdk/licenses/android-sdk-license
+
 CMD service ssh start
